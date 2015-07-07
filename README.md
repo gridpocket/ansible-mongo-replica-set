@@ -1,5 +1,21 @@
 # Deploy mongodb replica set cluster with authentication / authorization
 
+## Init Vagrant boxes and start VMs
+4 boxes are declare in vagrant/Vagrantfile
+- primary : primary mongo instance
+- secondary1 : one of replicaset
+- secondary2 : an other replicaset
+- arbiter : the arbiter (if 2 instances of mongo die! For more info : http://docs.mongodb.org/manual/core/replica-set-arbiter/)
+
+You can set IP of boxes if you want to change!
+
+To start boxes :
+- go to vagrant folder
+    cd folder
+- start all boxes
+    vagrant up
+Note : You certainely need to answer to network choice
+
 ## Typical usage with vagrant boxes
 
     1. Set ip in of the vagrant boxes in inventory/test.ini

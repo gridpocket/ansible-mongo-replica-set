@@ -23,13 +23,13 @@
   remote_user: mongors
   sudo: true
   roles:
-  - role: restart_mongo
+  - role: restart_mongod
 
 - hosts: secondary
   remote_user: mongors
   sudo: true
   roles:
-  - role: restart_mongo
+  - role: restart_mongod
 
 - hosts: primary
   remote_user: mongors

@@ -2,7 +2,10 @@
 - debug: msg="current host expected value:{{ groups['primary'][0] }} - current host current value:{{ inventory_hostname }}"
 
 - name: MongoDB - start server
-  service: name=mongod state=reloaded
+  service: name=mongod state=restarted
+
+- name: wait a couple of seconds
+  pause: seconds=10
 
 - name: copy createAdmin script
   template: src=createAdmins.j2 dest=/tmp/createAdmins.js

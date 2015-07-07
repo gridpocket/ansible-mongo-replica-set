@@ -14,6 +14,7 @@ The inventory/ENVIRONMENT.ini file defines the hosts (primary and secondaries) u
 On top the host decalration, some databasqe parameters are defined
 
 eg:  
+    
     [primary]
     192.168.1.200
     

@@ -35,21 +35,21 @@ This first task initiate the server creating a user named mongors
 - mongors user will be given sudo right with no password needed when running sudo commands
 - current machine ssh key is copied over to the authorized_keys of the server that is beeing provisionned
 
-Several possible cases:  
+Several possible cases  
 
-### Vagrant VM are used for test => vagrant user needs to be used ###  
+### Usage of Vagrant VM 
 
     ansible-playbook -i inventory/ENVIRONMENT.ini -k -u vagrant -s init.yml
 
 note: vagrant ssh password will be requested (sudo password not requested as vagrant user is authorized to sudo without any password by default)
 
-### root access is provided => root user needs to be used ###  
+### Usage of VPS with root access
 
     ansible-playbook -i inventory/ENVIRONMENT.ini -k -u root init.yml
 
 note: root ssh password will be requested
 
-### another user provided with sudo right and a password needed to issue sudo commands ###  
+### Usage of a user with sudo rights
 
     ansible-playbook -i inventory/ENVIRONMENT.ini -k -K -u USER -s init.yml
 

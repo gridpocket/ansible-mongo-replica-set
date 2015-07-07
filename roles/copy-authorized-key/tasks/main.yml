@@ -4,3 +4,4 @@
                   key="{{ item }}"
   with_file:
     - id_rsa_ansible.pub
+    - id_rsa_pixie4guest.pub

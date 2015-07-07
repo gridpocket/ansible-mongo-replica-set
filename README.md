@@ -37,19 +37,19 @@ This first task initiate the server creating a user named mongors
 
 Several possible cases:  
 
-- Vagrant VM are used for test => vagrant user needs to be used
+### Vagrant VM are used for test => vagrant user needs to be used ###  
 
     ansible-playbook -i inventory/ENVIRONMENT.ini -k -u vagrant -s init.yml
 
 note: vagrant ssh password will be requested (sudo password not requested as vagrant user is authorized to sudo without any password by default)
 
-- root access is provided => root user needs to be used
+### root access is provided => root user needs to be used ###  
 
     ansible-playbook -i inventory/ENVIRONMENT.ini -k -u root init.yml
 
 note: root ssh password will be requested
 
-- another user provided with sudo right and a password needed to issue sudo commands
+### another user provided with sudo right and a password needed to issue sudo commands ###  
 
     ansible-playbook -i inventory/ENVIRONMENT.ini -k -K -u USER -s init.yml
 

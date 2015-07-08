@@ -16,16 +16,9 @@ Vagrant.configure(2) do |config|
 			vb.customize ["modifyvm", :id, "--memory", "512"]
 		end
 	end
-	config.vm.define "secondary2" do |secondary2|
-		secondary2.vm.box = "ubuntu/trusty64"
-		secondary2.vm.network "public_network", ip:"192.168.1.182"
-		secondary2.vm.provider :virtualbox do |vb|
-			vb.customize ["modifyvm", :id, "--memory", "512"]
-		end
-	end
 	config.vm.define "arbiter" do |arbiter|
 		arbiter.vm.box = "ubuntu/trusty64"
-		arbiter.vm.network "public_network", ip:"192.168.1.183"
+		arbiter.vm.network "public_network", ip:"192.168.1.190"
 		arbiter.vm.provider :virtualbox do |vb|
 			vb.customize ["modifyvm", :id, "--memory", "512"]
 		end

@@ -25,7 +25,13 @@
   roles:
   - role: restart_mongod
 
-- hosts: secondary, arbiter
+- hosts: secondary
+  remote_user: mongors
+  sudo: true
+  roles:
+  - role: restart_mongod
+
+- hosts: arbiter
   remote_user: mongors
   sudo: true
   roles:

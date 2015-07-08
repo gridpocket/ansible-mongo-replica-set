@@ -1,5 +1,6 @@
 use admin
 db.auth("siteRootAdmin", "{{ hostvars[inventory_hostname]['db_root_admin_password']  }}");
-rs.add("{{ groups['secondary'][0] }}:27017");
-rs.add("{{ groups['secondary'][1] }}:27017");
+{% for ip in groups['secondary'] %}
+	rs.add("{{ ip }}:27017");
+{% endfor %}
 rs.addArb("{{ groups['arbiter'][0] }}:27017");

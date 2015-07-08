@@ -3,9 +3,8 @@
 ## Init Vagrant boxes and start VMs
 4 boxes are declare in vagrant/Vagrantfile
 - primary : primary mongo instance
-- secondary1 : one of replicaset
-- secondary2 : an other replicaset
-- arbiter : the arbiter (if 2 instances of mongo die! For more info : http://docs.mongodb.org/manual/core/replica-set-arbiter/)
+- secondary : one of replicaset (You can add more than 1 replicaset)
+- arbiter : the arbiter (if you don't want to deploy an other one secondary contains data! For more info : http://docs.mongodb.org/manual/core/replica-set-arbiter/)
 
 You can set IP of boxes if you want to change!
 
@@ -18,9 +17,9 @@ Note : You certainely need to answer to network choice
 
 ## Typical usage with vagrant boxes
 
-    1. Set ip in of the vagrant boxes in inventory/test.ini
-    2. Run: ansible-playbook -i inventory/test.ini -k -u vagrant -s init.yml
-    3. Run: ansible-playbook -i inventory/test.ini main.yml
+    1. Set ip in of the vagrant boxes in inventory/dev.ini
+    2. Run: ansible-playbook -i inventory/dev.ini -k -u vagrant -s init.yml
+    3. Run: ansible-playbook -i inventory/dev.ini main.yml
 
 Note: other options are detailled below to bootstrap this cluster on non vagrant boxes
 

@@ -21,14 +21,10 @@
   service: name=mongod state=stopped
   when: mongo_bin.stat.exists == False
 
-- name: remove data folder
-  file: path=/var/lib/mongodb state=absent
+- name: create /data/db folder (used to save db files)
+  file: path=/data/db state=directory owner=mongodb group=mongodb mode=0755
   when: mongo_bin.stat.exists == False
 
-- name: copy configuration file
-  copy: src=mongod.conf dest=/etc/mongod.conf mode=0644
-  when: mongo_bin.stat.exists == False
-
-- name: re-create data folder
-  file: path=/var/lib/mongodb state=directory owner=mongodb group=mongodb
-  when: mongo_bin.stat.exists == False
+- name: setup new configuration file
+  template : src=mongod.conf.j2 dest=/etc/mongod.conf mode=0644
+  # when: mongo_bin.stat.exists == False

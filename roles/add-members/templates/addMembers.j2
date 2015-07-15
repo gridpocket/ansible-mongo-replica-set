@@ -1,6 +1,11 @@
 use admin
-db.auth("siteRootAdmin", "{{ hostvars[inventory_hostname]['db_root_admin_password']  }}");
+db.auth("siteRootAdmin", "{{ db_root_admin_password }}");
 {% for ip in groups['secondary'] %}
-	rs.add("{{ ip }}:27017");
+	rs.add("{{ ip }}:{{ db_port }}");
 {% endfor %}
-rs.addArb("{{ groups['arbiter'][0] }}:27017");
+{#
+  TODO: correct test to check if arbiter group is not empty (
+  if groups['arbiter'].length > 0
+      rs.addArb("{{ groups['arbiter'][0] }}:{{ db_port }}");
+  endif
+#}

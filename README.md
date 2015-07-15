@@ -1,10 +1,10 @@
 # Deploy mongodb replica set cluster with authentication / authorization
 
 ## Init Vagrant boxes and start VMs
-4 boxes are declare in vagrant/Vagrantfile
-- primary : primary mongo instance
-- secondary : one of replicaset (You can add more than 1 replicaset)
-- arbiter : the arbiter (if you don't want to deploy an other one secondary contains data! For more info : http://docs.mongodb.org/manual/core/replica-set-arbiter/)
+3 boxes are declare in vagrant/Vagrantfile
+- db0 : primary mongo instance
+- db1 : one member of the replicaset (You can add more than 1 replicaset)
+- db2 : another member of the replicaset or an arbiter (if you don't want to deploy an other one secondary contains data! For more info : http://docs.mongodb.org/manual/core/replica-set-arbiter/)
 
 You can set IP of boxes if you want to change!
 

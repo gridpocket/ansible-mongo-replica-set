@@ -4,19 +4,14 @@ systemLog:
    logAppend: true
 storage:
    journal:
-      enabled: true
+      enabled: false
    engine: wiredTiger
-   dbPath: "/var/lib/mongodb"
+   dbPath: "/data/db"
 processManagement:
    fork: false
 net:
-   port: 27017
+   port: "{{ db_port }}"
    http:
       enabled: false
       JSONPEnabled: false
       RESTInterfaceEnabled: false
-replication:
-   replSetName: "rs0"
-security:
-   keyFile: /etc/mongodb-keyfile
-   authorization: enabled

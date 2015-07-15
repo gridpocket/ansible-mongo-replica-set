@@ -1,5 +1,5 @@
 use admin
-db.auth("siteRootAdmin", "{{ db_root_admin_password }}");
+db.auth("{{ db_root_admin_username }}", "{{ db_root_admin_password }}");
 {% for ip in groups['secondary'] %}
 	rs.add("{{ ip }}:{{ db_port }}");
 {% endfor %}

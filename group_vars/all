@@ -1,0 +1,18 @@
+---
+# siteUserAdmin
+db_user_admin_username: siteUserAdmin
+db_user_admin_password: siteUserAdminPassword
+
+# siteRootAdmin
+db_root_admin_username: siteRootAdmin
+db_root_admin_password: siteRootAdminPassword
+
+# port to use to connect to the database
+db_port: 27017
+
+# Name of the database
+db_name: DBNAME
+
+# Credentials of the user
+db_user_name: DBUSERNAME
+db_user_password: DBUSERPASSWORD

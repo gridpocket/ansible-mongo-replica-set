@@ -1,8 +1,8 @@
 use admin
-db.auth("siteUserAdmin", "{{ db_user_admin_password }}");
+db.auth("{{ db_user_admin_username  }}", "{{ db_user_admin_password }}");
 use {{ db_name }}
 db.createUser({
-    user: "{{ db_user_name }}",
+    user: "{{ db_user_username }}",
     pwd: "{{ db_user_password }}",
     roles:
     [
